@@ -1,9 +1,13 @@
 \documentclass{standalone}
 \usepackage{fireworksfestival}
 
+\providecommand{\first}{R}% fallback definition
+\providecommand{\second}{G}% fallback definition
+\providecommand{\third}{B}% fallback definition
+
 \setlength{\bleed}{0pt}
 \begin{document}
 \begin{tikzpicture}
-\pic at (0,0) {targetcardfrontprintable3={R}{Y}{G}};
+\pic at (0,0) {targetcardfrontprintable3={\first}{\second}{\third}};
 \end{tikzpicture}
 \end{document}
