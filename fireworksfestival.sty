@@ -1,0 +1,135 @@
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{math}
+\usepgflibrary{shadings}
+\usetikzlibrary{fadings}
+
+\usepackage{calc}
+\usepackage{fontspec}
+\usepackage{ifthen}
+\usepackage{contour}
+
+\definecolor{BlueSky}{HTML}{0F1633}
+\definecolor{myred}{HTML}{ff0000}
+\definecolor{myyellow}{HTML}{ffff00}
+\definecolor{mygreen}{HTML}{00ff00}
+\definecolor{myblue}{HTML}{00ffff}
+\definecolor{mypurple}{HTML}{ff00ff}
+\definecolor{mywhite}{HTML}{ffffff}
+
+\newlength{\cardwidth}
+\newlength{\cardheight}
+\newlength{\bleed}
+\newlength{\horizspace}
+\newlength{\vertspace}
+\newlength{\vertdist}
+\newlength{\horizdist}
+
+\setlength{\cardwidth}{2.5in}
+\setlength{\cardheight}{2.5in}
+%\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\tikzset{guidecross/.pic={
+	\draw[#1] (-\bleed,0) -- (\bleed,0);
+	\draw[#1] (0, -\bleed) -- (0, \bleed);
+}}
+
+\tikzset{cutguide/.pic={
+	\pic () at (-\cardwidth/2, \cardheight/2) {guidecross={#1}};
+	\pic () at (\cardwidth/2, \cardheight/2) {guidecross={#1}};
+	\pic () at (-\cardwidth/2, -\cardheight/2) {guidecross={#1}};
+	\pic () at (\cardwidth/2, -\cardheight/2) {guidecross={#1}};
+}}
+
+\tikzset{cardbackpattern/.pic={
+	\foreach \i in {-1.25, -1.0,...,1.25}
+		\foreach \j in {-1.25, -1.0, ..., 1.25}
+			\draw[very thick, #1] (\i,\j) circle (0.105);
+
+	\foreach \i in {-1.375, -1.125, -0.875,...,1.125, 1.375}
+		\foreach \j in {-1.375, -1.125, ..., 1.375}
+			\draw[very thick, #1] (\i,\j) circle (0.105);
+}}
+
+
+\tikzset{pics/targetcardfrontpattern3/.style n args={3}{
+	code={
+	\setmainfont[Scale=2.0]{Tex Gyre Schola}
+	\Huge
+	\pic () at (270:0.675in) {#1};
+	\pic () at (30:0.675in) {#2};
+	\pic () at (150:0.675in) {#3};
+}}}
+
+\tikzset{ingredient/.style={circle, draw, black, line width=0.025in, inner sep = 0.075in}}
+
+\tikzset{R/.pic={
+\node[ingredient, fill=Red] at (0,0) {\contour{Black}{\textcolor{white}{R}}};
+}}
+
+\tikzset{G/.pic={
+\node[ingredient, fill=Green] at (0,0) {\contour{Black}{\textcolor{white}{G}}};
+}}
+
+\tikzset{B/.pic={
+\node[ingredient, fill=RoyalBlue] at (0,0) {\contour{Black}{\textcolor{white}{B}}};
+}}
+
+\tikzset{Y/.pic={
+\node[ingredient, fill=Goldenrod] at (0,0) {\contour{Black}{\textcolor{white}{Y}}};
+}}
+
+\tikzset{P/.pic={
+\node[ingredient, fill=Purple] at (0,0) {\contour{Black}{\textcolor{white}{P}}};
+}}
+
+\tikzset{targetcardbackprintable/.pic={
+	\begin{scope}
+	\clip (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+	% Pattern for card back
+	\path[fill=white] (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+
+	\pic () at (0,0) {cardbackpattern=BlueSky};
+	% Cutting guides for corners of the cards	
+	\pic () at (0,0) {cutguide={white}};
+\end{scope}
+}}
+
+\tikzset{pics/targetcardfrontprintable3/.style n args={3}{
+	code={
+	\begin{scope}
+	\clip (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+	% Pattern for card front
+	\path[fill=white] (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+
+	\pic () at (0,0.125in) {targetcardfrontpattern3={#1}{#2}{#3}};
+	% Cutting guides for corners of the cards	
+	\pic () at (0,0) {cutguide={black}};
+\end{scope}
+}}}
+
