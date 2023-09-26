@@ -67,6 +67,7 @@
 }}}
 
 \tikzset{ingredient/.style={circle, draw, black, line width=0.025in, inner sep = 0.075in}}
+\tikzset{grawlix/.style={circle, draw, black, line width=0.025in}}
 
 \tikzset{R/.pic={
 \node[ingredient, fill=Red] at (0,0) {\contour*{Black}{\textcolor{white}{R}}};
@@ -86,6 +87,30 @@
 
 \tikzset{P/.pic={
 \node[ingredient, fill=Purple] at (0,0) {\contour*{Black}{\textcolor{white}{P}}};
+}}
+
+\tikzset{at/.pic={
+\node[grawlix, fill=Red, inner sep = 0.02in] at (0,0) {\setmainfont[Scale=2.45]{ComicNeue-Bold}\contour*{Black}{\textcolor{white}{@}}};
+}}
+
+\tikzset{octothorpe/.pic={
+\node[grawlix, fill=Goldenrod, inner sep = 0.045in] at (0,0) {\setmainfont[Scale=2.5]{ComicNeue-Bold}\contour*{Black}{\textcolor{white}{\#}}};
+}}
+
+\tikzset{dollar/.pic={
+\node[grawlix, fill=Green, inner sep = 0.0425in] at (0,0) {\setmainfont[Scale=2.5]{ComicNeue-Bold}\contour*{Black}{\textcolor{white}{\$}}};
+}}
+
+\tikzset{percent/.pic={
+\node[grawlix, fill=RoyalBlue, inner sep = 0.0475in] at (0,0) {\setmainfont[Scale=2.5]{ComicNeue-Bold}\contour*{Black}{\textcolor{white}{\%}}};
+}}
+
+\tikzset{ampersand/.pic={
+\node[grawlix, fill=Purple, inner sep = 0.05in] at (0,0) {\setmainfont[Scale=2.55]{ComicNeue-Bold}\contour*{Black}{\textcolor{white}{\&}}};
+}}
+
+\tikzset{asterisk/.pic={
+\node[grawlix, fill=lightgray, inner sep = 0.05in] at (0,0) {\setmainfont[Scale=3.5]{Quicksand-semibold}\contour*{Black}{\textcolor{white}{\textasteriskcentered{}}}};
 }}
 
 \tikzset{targetcardbackprintable/.pic={

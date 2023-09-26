@@ -1,0 +1,53 @@
+\documentclass{standalone}
+\usepackage{fireworksfestival}
+
+\setlength{\bleed}{0.0in}
+\setlength{\horizspace}{0.0in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\begin{document}
+\begin{tikzpicture}[x=1in, y=1in]
+\pic () at (0,0) {targetcardfrontprintable3={at}{octothorpe}{dollar}};
+\pic () at (\horizdist,0) {targetcardfrontprintable3={at}{octothorpe}{percent}};
+\pic () at (2\horizdist,0) {targetcardfrontprintable3={at}{octothorpe}{ampersand}};
+\pic () at (3\horizdist,0) {targetcardfrontprintable3={at}{dollar}{percent}};
+\pic () at (4\horizdist,0) {targetcardfrontprintable3={at}{dollar}{ampersand}};
+\pic () at (5\horizdist,0) {targetcardfrontprintable3={at}{percent}{ampersand}};
+\pic () at (6\horizdist,0) {targetcardfrontprintable3={octothorpe}{dollar}{percent}};
+\pic () at (7\horizdist,0) {targetcardfrontprintable3={octothorpe}{dollar}{ampersand}};
+\pic () at (8\horizdist,0) {targetcardfrontprintable3={octothorpe}{percent}{ampersand}};
+\pic () at (9\horizdist,0) {targetcardfrontprintable3={dollar}{percent}{ampersand}};
+
+\pic () at (0,-\vertdist) {targetcardfrontprintable3={octothorpe}{at}{at}};
+\pic () at (\horizdist,-\vertdist) {targetcardfrontprintable3={dollar}{at}{at}};
+\pic () at (2\horizdist,-\vertdist) {targetcardfrontprintable3={percent}{at}{at}};
+\pic () at (3\horizdist,-\vertdist) {targetcardfrontprintable3={ampersand}{at}{at}};
+\pic () at (4\horizdist,-\vertdist) {targetcardfrontprintable3={at}{octothorpe}{octothorpe}};
+\pic () at (5\horizdist,-\vertdist) {targetcardfrontprintable3={dollar}{octothorpe}{octothorpe}};
+\pic () at (6\horizdist,-\vertdist) {targetcardfrontprintable3={percent}{octothorpe}{octothorpe}};
+\pic () at (7\horizdist,-\vertdist) {targetcardfrontprintable3={ampersand}{octothorpe}{octothorpe}};
+\pic () at (8\horizdist,-\vertdist) {targetcardfrontprintable3={at}{dollar}{dollar}};
+\pic () at (9\horizdist,-\vertdist) {targetcardfrontprintable3={octothorpe}{dollar}{dollar}};
+
+\pic () at (0,-2\vertdist) {targetcardfrontprintable3={percent}{dollar}{dollar}};
+\pic () at (\horizdist,-2\vertdist) {targetcardfrontprintable3={ampersand}{dollar}{dollar}};
+\pic () at (2\horizdist,-2\vertdist) {targetcardfrontprintable3={at}{percent}{percent}};
+\pic () at (3\horizdist,-2\vertdist) {targetcardfrontprintable3={octothorpe}{percent}{percent}};
+\pic () at (4\horizdist,-2\vertdist) {targetcardfrontprintable3={percent}{percent}{percent}};
+\pic () at (5\horizdist,-2\vertdist) {targetcardfrontprintable3={ampersand}{percent}{percent}};
+\pic () at (6\horizdist,-2\vertdist) {targetcardfrontprintable3={at}{ampersand}{ampersand}};
+\pic () at (7\horizdist,-2\vertdist) {targetcardfrontprintable3={octothorpe}{ampersand}{ampersand}};
+\pic () at (8\horizdist,-2\vertdist) {targetcardfrontprintable3={dollar}{ampersand}{ampersand}};
+\pic () at (9\horizdist,-2\vertdist) {targetcardfrontprintable3={percent}{ampersand}{ampersand}};
+
+\pic () at (0,-3\vertdist) {targetcardfrontprintable3={at}{at}{at}};
+\pic () at (\horizdist,-3\vertdist) {targetcardfrontprintable3={dollar}{dollar}{dollar}};
+\pic () at (2\horizdist,-3\vertdist) {targetcardfrontprintable3={octothorpe}{octothorpe}{octothorpe}};
+\pic () at (3\horizdist,-3\vertdist) {targetcardfrontprintable3={percent}{percent}{percent}};
+\pic () at (4\horizdist,-3\vertdist) {targetcardfrontprintable3={ampersand}{ampersand}{ampersand}};
+\pic () at (5\horizdist,-3\vertdist) {targetcardbackprintable};
+
+\end{tikzpicture}
+\end{document}

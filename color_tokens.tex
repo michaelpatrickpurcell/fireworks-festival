@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{fireworksfestival}
+\setmainfont[Scale=2.0]{Tex Gyre Schola}
+\Huge
+
+\begin{document}
+\begin{tikzpicture}[x=1in, y=1in]
+%\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\foreach \j in {-4.5in, -3in, -1.5in, 0in, 1.5in, 3in, 4.5in}
+{
+	\pic[scale=2.85, transform shape] at (-3in,\j) {R};
+	\pic[scale=2.85, transform shape] at (-1.5in,\j) {Y};
+	\pic[scale=2.85, transform shape] at (0in,\j) {G};
+	\pic[scale=2.85, transform shape] at (1.5in,\j) {B};
+	\pic[scale=2.85, transform shape] at (3in,\j) {P};
+}
+
+\end{tikzpicture}
+\end{document}
