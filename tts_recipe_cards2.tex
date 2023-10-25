@@ -1,0 +1,32 @@
+\documentclass{standalone}
+\usepackage{fireworksfestival}
+
+\setlength{\bleed}{0.0in}
+\setlength{\horizspace}{0.0in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\begin{document}
+\begin{tikzpicture}[x=1in, y=1in]
+\pic () at (0,0) {targetcardfrontprintable2={at}{octothorpe}};
+\pic () at (\horizdist,0) {targetcardfrontprintable2={at}{dollar}};
+\pic () at (2\horizdist,0) {targetcardfrontprintable2={at}{percent}};
+\pic () at (3\horizdist,0) {targetcardfrontprintable2={at}{ampersand}};
+\pic () at (4\horizdist,0) {targetcardfrontprintable2={octothorpe}{dollar}};
+\pic () at (5\horizdist,0) {targetcardfrontprintable2={octothorpe}{percent}};
+\pic () at (6\horizdist,0) {targetcardfrontprintable2={octothorpe}{ampersand}};
+\pic () at (7\horizdist,0) {targetcardfrontprintable2={dollar}{percent}};
+\pic () at (8\horizdist,0) {targetcardfrontprintable2={dollar}{ampersand}};
+\pic () at (9\horizdist,0) {targetcardfrontprintable2={percent}{ampersand}};
+
+
+\pic () at (0,-\vertdist) {targetcardfrontprintable2={at}{at}};
+\pic () at (\horizdist,-\vertdist) {targetcardfrontprintable2={octothorpe}{octothorpe}};
+\pic () at (2\horizdist,-\vertdist) {targetcardfrontprintable2={dollar}{dollar}};
+\pic () at (3\horizdist,-\vertdist) {targetcardfrontprintable2={percent}{percent}};
+\pic () at (4\horizdist,-\vertdist) {targetcardfrontprintable2={ampersand}{ampersand}};
+\pic () at (5\horizdist,-\vertdist) {targetcardbackprintable};
+
+\end{tikzpicture}
+\end{document}

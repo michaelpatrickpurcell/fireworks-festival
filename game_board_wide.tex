@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{dessertdice}
+
+\begin{document}
+\begin{tikzpicture}
+
+\foreach \i in {0mm, 20mm, 40mm, 60mm, 80mm}
+	\draw[ultra thick] (0mm,\i) -- (80mm,\i);
+
+\foreach \i in {0mm, 20mm, 40mm, 60mm, 80mm}
+	\draw[ultra thick] (\i, 0mm) -- (\i, 80mm);
+
+\foreach \i in {0mm, 20mm, 40mm, 60mm, 80mm}
+	\foreach \j in {0mm, 20mm, 40mm, 60mm, 80mm}
+		\node[draw, circle, fill=black] () at (\i,\j) {};
+		
+
+\foreach \i in {-10mm, 90mm}
+	\foreach \j in {-10mm, 90mm}	
+		\pic at (\i,\j) {guidecross={black}};
+\end{tikzpicture}
+\end{document}

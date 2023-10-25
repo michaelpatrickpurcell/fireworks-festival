@@ -56,6 +56,13 @@
 			\draw[very thick, #1] (\i,\j) circle (0.105);
 }}
 
+\tikzset{pics/targetcardfrontpattern2/.style n args={2}{
+	code={
+	\setmainfont[Scale=2.0]{Tex Gyre Schola}
+	\Huge
+	\pic () at (225:0.66in) {#1};
+	\pic () at (45:0.66in) {#2};
+}}}
 
 \tikzset{pics/targetcardfrontpattern3/.style n args={3}{
 	code={
@@ -64,6 +71,16 @@
 	\pic () at (270:0.675in) {#1};
 	\pic () at (30:0.675in) {#2};
 	\pic () at (150:0.675in) {#3};
+}}}
+
+\tikzset{pics/targetcardfrontpattern4/.style n args={4}{
+	code={
+	\setmainfont[Scale=2.0]{Tex Gyre Schola}
+	\Huge
+	\pic () at (225:0.8in) {#1};
+	\pic () at (315:0.8in) {#2};
+	\pic () at (45:0.8in) {#3};
+	\pic () at (135:0.8in) {#4};
 }}}
 
 \tikzset{ingredient/.style={circle, draw, black, line width=0.025in, inner sep = 0.075in}}
@@ -135,6 +152,30 @@
 \end{scope}
 }}
 
+\tikzset{pics/targetcardfrontprintable2/.style n args={2}{
+	code={
+	\begin{scope}
+	\clip (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+	% Pattern for card front
+	\path[fill=white] (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+
+	\pic () at (0,0) {targetcardfrontpattern2={#1}{#2}};
+	% Cutting guides for corners of the cards	
+	\pic () at (0,0) {cutguide={white}};
+\end{scope}
+}}}
+
+
 \tikzset{pics/targetcardfrontprintable3/.style n args={3}{
 	code={
 	\begin{scope}
@@ -158,3 +199,25 @@
 \end{scope}
 }}}
 
+\tikzset{pics/targetcardfrontprintable4/.style n args={4}{
+	code={
+	\begin{scope}
+	\clip (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+	% Pattern for card front
+	\path[fill=white] (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+
+	\pic () at (0,0) {targetcardfrontpattern4={#1}{#2}{#3}{#4}};
+	% Cutting guides for corners of the cards	
+	\pic () at (0,0) {cutguide={white}};
+\end{scope}
+}}}
