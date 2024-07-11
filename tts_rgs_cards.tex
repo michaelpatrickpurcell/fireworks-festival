@@ -1,0 +1,31 @@
+\documentclass{standalone}
+
+\usepackage{realitygameshow}
+\setlength{\bleed}{0.0in}
+\setlength{\horizspace}{0.0in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+
+\setmainfont[Scale=1.0]{Tex Gyre Heros}
+\setmainfont[Scale=1.0]{Graduate}
+\setmainfont[Scale=1.0]{Orbitron-Bold}
+
+\begin{document}
+\begin{tikzpicture}
+\Huge
+%\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (0\horizdist,0\vertdist) {competitorcardfrontprintable={Arthur}{runningman.png}{red_gem}{black_gem}{blue_gem}{black}};
+\pic at (1\horizdist,0\vertdist) {competitorcardfrontprintable={Benjamin}{wrestlingman.png}{red_gem}{black_gem}{green_gem}{black}};
+\pic at (2\horizdist,0\vertdist) {competitorcardfrontprintable={Catherine}{weightliftingwoman2.png}{red_gem}{blue_gem}{green_gem}{black}};
+\pic at (3\horizdist,0\vertdist) {competitorcardfrontprintable={Diana}{yogawoman.png}{black_gem}{blue_gem}{green_gem}{black}};
+\pic at (4\horizdist,0\vertdist) {competitorcardfrontprintable={Emmett}{climbingman.png}{red_gem}{red_gem}{black_gem}{black}};
+\pic at (5\horizdist,0\vertdist) {competitorcardfrontprintable={Felicity}{runningwoman.png}{red_gem}{red_gem}{blue_gem}{black}};
+\pic at (6\horizdist,0\vertdist) {competitorcardfrontprintable={Gerald}{runningman2.png}{red_gem}{red_gem}{green_gem}{black}};
+\pic at (7\horizdist,0\vertdist) {competitorcardfrontprintable={Hannah}{runningwoman2.png}{black_gem}{black_gem}{blue_gem}{black}};
+\pic at (8\horizdist,0\vertdist) {competitorcardfrontprintable={Isaac}{bodybuilderman.png}{black_gem}{black_gem}{green_gem}{black}};
+\pic at (9\horizdist,0\vertdist) {competitorcardfrontprintable={Jonathan}{weightliftingman.png}{blue_gem}{blue_gem}{green_gem}{black}};
+
+\end{tikzpicture}
+\end{document}

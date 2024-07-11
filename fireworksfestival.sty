@@ -146,7 +146,8 @@
 	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
 	      cycle;
 
-	\pic () at (0,0) {cardbackpattern=BlueSky};
+	\pic () at (0,0) {cardbackpattern=black};
+	\node at (0,0) {\contour*{white}{\setmainfont[Scale=6.0]{Roboto Slab}\Huge\textbf{\textcolor{black}{#1}}}};
 	% Cutting guides for corners of the cards	
 	\pic () at (0,0) {cutguide={white}};
 \end{scope}
@@ -171,7 +172,7 @@
 
 	\pic () at (0,0) {targetcardfrontpattern2={#1}{#2}};
 	% Cutting guides for corners of the cards	
-	\pic () at (0,0) {cutguide={white}};
+	\pic () at (0,0) {cutguide={black}};
 \end{scope}
 }}}
 
@@ -218,6 +219,6 @@
 
 	\pic () at (0,0) {targetcardfrontpattern4={#1}{#2}{#3}{#4}};
 	% Cutting guides for corners of the cards	
-	\pic () at (0,0) {cutguide={white}};
+	\pic () at (0,0) {cutguide={black}};
 \end{scope}
 }}}
